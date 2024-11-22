@@ -5,8 +5,8 @@ app = Flask(__name__)
 register_routes(app)
 
 @app.route('/')
-def hello():
-    return "helloworld, flask"
+def application_index():
+    return 'Welcome to flask application ! - this is python'
 
 if __name__ == '__main__' :
     app.run(debug=True)
