@@ -22,3 +22,13 @@ def login():
     controller = get_admin_controller()
     res = controller.login(email, password)
     return jsonify(res)
+
+@admin_routes.route("/getAllUser", methods = ["GET"])
+def getUsers():
+    controller = get_admin_controller()
+    return jsonify(controller.get_all_user())
+
+@admin_routes.route("/banUser/<int:id>", methods = ["DELETE"])
+def ban_user(id):
+    controller = get_admin_controller()
+    return jsonify(controller.ban_user(id))
